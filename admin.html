@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - Terminology Dictionary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="admin-page">
+    <div class="container">
+      <header>
+        <h1>Admin Panel</h1>
+        <p class="subtitle">Manage Terminology Dictionary</p>
+        <a href="index.html" class="back-link">← Back to Dictionary</a>
+      </header>
+
+      <div class="admin-content">
+        <section class="add-section">
+          <h2>Add New Term</h2>
+          <form id="add-term-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="term-ru">Russian</label>
+                <input
+                  type="text"
+                  id="term-ru"
+                  placeholder="Русский термин"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="term-kz">Kazakh</label>
+                <input
+                  type="text"
+                  id="term-kz"
+                  placeholder="Қазақша термин"
+                  required
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn-add">Add Term</button>
+          </form>
+        </section>
+
+        <section class="terms-section">
+          <div class="section-header">
+            <h2>All Terms</h2>
+            <span id="admin-count">0 terms</span>
+          </div>
+
+          <div id="terms-list" class="terms-list">
+            <div class="empty-state">
+              <p>No terms added yet. Create your first term above!</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="data-section">
+          <h2>Data Management</h2>
+          <div class="button-group">
+            <button id="export-btn" class="btn-secondary">Export Data</button>
+            <button id="import-btn" class="btn-secondary">Import Data</button>
+            <button id="clear-btn" class="btn-danger">Clear All Terms</button>
+          </div>
+          <input type="file" id="import-file" accept=".json" style="display: none;" />
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
